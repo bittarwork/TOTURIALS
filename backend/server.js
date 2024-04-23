@@ -12,8 +12,10 @@ app.use(cors(corsOptions));
 
 app.use((req, res, next) => {
   console.log(req.method);
-  console.log(req.body);
-  console.log(req.url)
+  if (req.body) { 
+    console.log(req.body);
+  }
+  console.log(req.url);
   next();
 });
 
